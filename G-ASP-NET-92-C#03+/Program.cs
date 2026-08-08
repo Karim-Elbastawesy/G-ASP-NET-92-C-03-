@@ -42,13 +42,32 @@
 
             //#endregion
 
-            #region Question04
+            //#region Question04
+            //// ---------
+            //// Q: Write a method PrintBookTitle(string title) that prints "Book title: " + title.
+            //// Call it with "Clean Code".
+            //// ---------
+
+            //PrintBookTitle("Clean Code");
+
+            //#endregion
+
+            #region Question05
             // ---------
-            // Q: Write a method PrintBookTitle(string title) that prints "Book title: " + title.
-            // Call it with "Clean Code".
+            // Q: Write a method AddBonusPages(int pages) that adds 50 to pages.
+            // Call it with a variable int pages = 400; and print pages afterward.
+            // What do you expect to see, and why?
             // ---------
 
-            PrintBookTitle("Clean Code");
+            int pages = 400;
+
+            AddBonusPages(pages);
+
+            Console.WriteLine(pages);
+
+            // int > value type
+            // "pages" gives a copy of its a value as the method changes it to 450
+            // keeping the original "pages" at 400 still
 
             #endregion
         }
@@ -59,6 +78,10 @@
         static void PrintBookTitle(string title)
         {
             Console.WriteLine("Book title: " + title);
+        }
+        static void AddBonusPages(int pages)
+        {
+            pages = pages + 50;
         }
     }
 }
