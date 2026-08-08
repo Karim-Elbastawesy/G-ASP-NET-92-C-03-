@@ -148,13 +148,23 @@
 
             //#endregion
 
-            #region Question11
+            //#region Question11
+            //// ---------
+            //// Q: Using the PrintBookInfo method from the question above, call it by naming the
+            //// parameters, passing pages before title.
+            //// ---------
+
+            //PrintBookInfo(pages: 400, title: "Refactoring");
+
+            //#endregion
+
+            #region Question12
             // ---------
-            // Q: Using the PrintBookInfo method from the question above, call it by naming the
-            // parameters, passing pages before title.
+            // Q: Write a method PrintAllTitles(params string[] titles) that prints each title on its own line.
+            // Call it with three book titles.
             // ---------
 
-            PrintBookInfo(pages: 400, title: "Refactoring");
+            PrintAllTitles("Clean Code", "The Pragmatic Programmer", "Refactoring");
 
             #endregion
         }
@@ -199,6 +209,13 @@
         {
             Console.WriteLine("Title: " + title);
             Console.WriteLine("Pages: " + pages);
+        }
+        static void PrintAllTitles(params string[] titles)
+        {
+            foreach (string title in titles)
+            {
+                Console.WriteLine(title);
+            }
         }
     }
 }
