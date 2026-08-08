@@ -71,20 +71,37 @@
 
             //#endregion
 
-            #region Question06
+            //#region Question06
+            //// ---------
+            //// Q: Write a method ApplyDiscount(double[] prices) that subtracts 5 from prices[0].
+            //// Call it with double[] prices = { 25.5, 40.0 }; and print prices[0] afterward.
+            //// What do you expect to see, and why?
+            //// ---------
+
+            //double[] prices = { 25.5, 40.0 };
+
+            //ApplyDiscount(prices);
+
+            //Console.WriteLine(prices[0]);
+
+            //// method subtracts 5 from prices[0] changing 25.5 to 20.5
+            //#endregion
+
+            #region Question07
             // ---------
-            // Q: Write a method ApplyDiscount(double[] prices) that subtracts 5 from prices[0].
-            // Call it with double[] prices = { 25.5, 40.0 }; and print prices[0] afterward.
-            // What do you expect to see, and why?
+            // Q: Rewrite the method from question 5 as AddBonusPagesByRef(ref int pages) using ref.
+            // Call it and print pages afterward. How is the result different from question 5?
             // ---------
 
-            double[] prices = { 25.5, 40.0 };
+            int pages = 400;
 
-            ApplyDiscount(prices);
+            AddBonusPagesByRef(ref pages);
 
-            Console.WriteLine(prices[0]);
+            Console.WriteLine(pages);
 
-            // method subtracts 5 from prices[0] changing 25.5 to 20.5
+
+            // in question05, the method got a copy of 400
+            // while ref works with the orginial variable
             #endregion
 
         }
@@ -104,6 +121,10 @@
         static void ApplyDiscount(double[] prices)
         {
             prices[0] = prices[0] - 5;
+        }
+        static void AddBonusPagesByRef(ref int pages)
+        {
+            pages = pages + 50;
         }
     }
 }
