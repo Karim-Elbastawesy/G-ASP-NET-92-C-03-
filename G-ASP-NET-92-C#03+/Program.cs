@@ -87,21 +87,35 @@
             //// method subtracts 5 from prices[0] changing 25.5 to 20.5
             //#endregion
 
-            #region Question07
+            //#region Question07
+            //// ---------
+            //// Q: Rewrite the method from question 5 as AddBonusPagesByRef(ref int pages) using ref.
+            //// Call it and print pages afterward. How is the result different from question 5?
+            //// ---------
+
+            //int pages = 400;
+
+            //AddBonusPagesByRef(ref pages);
+
+            //Console.WriteLine(pages);
+
+
+            //// in question05, the method got a copy of 400
+            //// while ref works with the orginial variable
+            //#endregion
+
+            #region Question08
             // ---------
-            // Q: Rewrite the method from question 5 as AddBonusPagesByRef(ref int pages) using ref.
-            // Call it and print pages afterward. How is the result different from question 5?
+            // Q: Write a method ReplaceArray(ref double[] prices) that replaces prices entirely with a
+            // new array { 10.0, 12.5, 15.0 }. Call it with your prices array and print prices.Length afterward.
             // ---------
 
-            int pages = 400;
+            double[] prices = { 25.5, 40.0, 33.75 };
 
-            AddBonusPagesByRef(ref pages);
+            ReplaceArray(ref prices);
 
-            Console.WriteLine(pages);
+            Console.WriteLine(prices.Length);
 
-
-            // in question05, the method got a copy of 400
-            // while ref works with the orginial variable
             #endregion
 
         }
@@ -126,5 +140,10 @@
         {
             pages = pages + 50;
         }
+        static void ReplaceArray(ref double[] prices)
+        {
+            prices = new double[] { 10.0, 12.5, 15.0 };
+        }
+
     }
 }
