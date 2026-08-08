@@ -104,17 +104,35 @@
             //// while ref works with the orginial variable
             //#endregion
 
-            #region Question08
+            //#region Question08
+            //// ---------
+            //// Q: Write a method ReplaceArray(ref double[] prices) that replaces prices entirely with a
+            //// new array { 10.0, 12.5, 15.0 }. Call it with your prices array and print prices.Length afterward.
+            //// ---------
+
+            //double[] prices = { 25.5, 40.0, 33.75 };
+
+            //ReplaceArray(ref prices);
+
+            //Console.WriteLine(prices.Length);
+
+            //#endregion
+
+            #region Question09
             // ---------
-            // Q: Write a method ReplaceArray(ref double[] prices) that replaces prices entirely with a
-            // new array { 10.0, 12.5, 15.0 }. Call it with your prices array and print prices.Length afterward.
+            // Q: Write a method bool TryGetPrice(string title, out double price) that returns true and sets
+            // price to 25.5 if title is "Clean Code", otherwise returns false and sets price to 0.
+            // Call it and print the price if found.
             // ---------
 
-            double[] prices = { 25.5, 40.0, 33.75 };
+            double price;
 
-            ReplaceArray(ref prices);
+            bool found = TryGetPrice("Clean Code", out price);
 
-            Console.WriteLine(prices.Length);
+            if (found)
+            {
+                Console.WriteLine(price);
+            }
 
             #endregion
 
@@ -143,6 +161,17 @@
         static void ReplaceArray(ref double[] prices)
         {
             prices = new double[] { 10.0, 12.5, 15.0 };
+        }
+        static bool TryGetPrice(string title, out double price)
+        {
+            if (title == "Clean Code")
+            {
+                price = 25.5;
+                return true;
+            }
+
+            price = 0;
+            return false;
         }
 
     }
