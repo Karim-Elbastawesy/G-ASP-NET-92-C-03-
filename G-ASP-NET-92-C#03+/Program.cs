@@ -52,25 +52,43 @@
 
             //#endregion
 
-            #region Question05
+            //#region Question05
+            //// ---------
+            //// Q: Write a method AddBonusPages(int pages) that adds 50 to pages.
+            //// Call it with a variable int pages = 400; and print pages afterward.
+            //// What do you expect to see, and why?
+            //// ---------
+
+            //int pages = 400;
+
+            //AddBonusPages(pages);
+
+            //Console.WriteLine(pages);
+
+            //// int > value type
+            //// "pages" gives a copy of its a value as the method changes it to 450
+            //// keeping the original "pages" at 400 still
+
+            //#endregion
+
+            #region Question06
             // ---------
-            // Q: Write a method AddBonusPages(int pages) that adds 50 to pages.
-            // Call it with a variable int pages = 400; and print pages afterward.
+            // Q: Write a method ApplyDiscount(double[] prices) that subtracts 5 from prices[0].
+            // Call it with double[] prices = { 25.5, 40.0 }; and print prices[0] afterward.
             // What do you expect to see, and why?
             // ---------
 
-            int pages = 400;
+            double[] prices = { 25.5, 40.0 };
 
-            AddBonusPages(pages);
+            ApplyDiscount(prices);
 
-            Console.WriteLine(pages);
+            Console.WriteLine(prices[0]);
 
-            // int > value type
-            // "pages" gives a copy of its a value as the method changes it to 450
-            // keeping the original "pages" at 400 still
-
+            // method subtracts 5 from prices[0] changing 25.5 to 20.5
             #endregion
+
         }
+
         static void PrintWelcomeMessage()
         {
             Console.WriteLine("Welcome to the Library!");
@@ -82,6 +100,10 @@
         static void AddBonusPages(int pages)
         {
             pages = pages + 50;
+        }
+        static void ApplyDiscount(double[] prices)
+        {
+            prices[0] = prices[0] - 5;
         }
     }
 }
