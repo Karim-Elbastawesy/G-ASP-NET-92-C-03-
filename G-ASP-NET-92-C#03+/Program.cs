@@ -32,19 +32,33 @@
 
             //#endregion
 
-            #region Question03
+            //#region Question03
+            //// ---------
+            //// Q: Write a method called PrintWelcomeMessage that takes no parameters and prints
+            //// "Welcome to the Library!". Call it from Main.
+            //// ---------
+
+            //PrintWelcomeMessage();
+
+            //#endregion
+
+            #region Question04
             // ---------
-            // Q: Write a method called PrintWelcomeMessage that takes no parameters and prints
-            // "Welcome to the Library!". Call it from Main.
+            // Q: Write a method PrintBookTitle(string title) that prints "Book title: " + title.
+            // Call it with "Clean Code".
             // ---------
 
-            PrintWelcomeMessage();
+            PrintBookTitle("Clean Code");
 
             #endregion
         }
         static void PrintWelcomeMessage()
         {
             Console.WriteLine("Welcome to the Library!");
+        }
+        static void PrintBookTitle(string title)
+        {
+            Console.WriteLine("Book title: " + title);
         }
     }
 }
